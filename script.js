@@ -1,15 +1,24 @@
 $(document).ready(function() {
+
     setTimeout(function() {
         //
         $(".bienvenido").fadeOut(1500);
     }, 5000);
-
     setTimeout(function() {
         $(".form-group").fadeIn(1500);
     }, 5000);
+
+
 });
 
-
+function onKeyUnPressed(event) {
+    var codigo = event.which || event.keyCode;
+    console.log("Presionada: " + codigo);
+    if (codigo == 17 && codigo == 121) {
+        document.getElementById("validE").style.display = "block";
+        document.getElementById("invalidE").style.display = "none";
+    }
+}
 
 function validar() {
     var email = document.getElementById("email").value;
